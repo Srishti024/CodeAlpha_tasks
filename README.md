@@ -19,7 +19,7 @@ Features include basic arithmetic operations and a responsive layout.
 A dynamic image gallery with filtering options and responsive design.  
 Users can easily navigate through images with an intuitive interface.  
 
-![Image Gallery Screenshot](SS/GALLERY.PNG)
+![Image Gallery Screenshot](SS/GALLERY.png)
 
 ---
 
