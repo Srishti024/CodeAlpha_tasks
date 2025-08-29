@@ -1,6 +1,6 @@
 # CodeAlpha Internship – Web Development Projects
 
-I successfully completed my **1-month internship at CodeAlpha** as a Web Development Intern.  
+I successfully completed my **1-month internship at CodeAlpha** as a Frontend Development Intern.  
 During this internship, I built **3 front-end projects** using **HTML, CSS, and JavaScript**, focusing on clean UI, responsive design, and smooth animations.
 
 ---
