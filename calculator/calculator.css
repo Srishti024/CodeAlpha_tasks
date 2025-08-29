@@ -1,0 +1,80 @@
+/* Background and layout */
+body {
+    background: linear-gradient(to bottom right, #a2d2ff, #f9f7f7);
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Calculator Container */
+#calculator {
+    border: 2px solid #333;
+    border-radius: 15px;
+    width: 340px; /* Increased width */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Display Input */
+#display {
+    width: 100%;
+    font-size: 28px;
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: #222;
+    color: #00ffcc;
+    border: none;
+    border-radius: 8px;
+    text-align: right;
+    box-sizing: border-box; /* Prevents overflow */
+}
+
+/* Buttons Grid */
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 0;
+}
+
+/* Individual Buttons */
+.button {
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    height: 60px;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #c0f0ff;
+    transform: scale(1.05);
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+/* Header */
+header {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    text-shadow: 1px 1px 2px #aaa;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

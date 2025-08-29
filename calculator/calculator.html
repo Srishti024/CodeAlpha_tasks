@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="calculator.css">
+    <title>CALCULATOR</title>
+</head>
+
+<body>
+    <header>CALCULATOR</header>
+    <main>
+        <div id="calculator">
+            <input id="display" type="text" readonly>
+            <div class="button-container">
+    <button class="button" onclick="clearDisplay()">C</button>
+    <button class="button" onclick="appendToDisplay('1')">1</button>
+    <button class="button" onclick="appendToDisplay('2')">2</button>
+    <button class="button" onclick="appendToDisplay('+')">+</button>
+
+    <button class="button" onclick="appendToDisplay('3')">3</button>
+    <button class="button" onclick="appendToDisplay('4')">4</button>
+    <button class="button" onclick="appendToDisplay('5')">5</button>
+    <button class="button" onclick="appendToDisplay('-')">-</button>
+
+    <button class="button" onclick="appendToDisplay('6')">6</button>
+    <button class="button" onclick="appendToDisplay('7')">7</button>
+    <button class="button" onclick="appendToDisplay('8')">8</button>
+    <button class="button" onclick="appendToDisplay('*')">*</button>
+
+    <button class="button" onclick="appendToDisplay('9')">9</button>
+    <button class="button" onclick="appendToDisplay('0')">0</button>
+    <button class="button" onclick="appendToDisplay('.')">.</button>
+    <button class="button" onclick="appendToDisplay('/')">/</button>
+
+    <button class="button" style="grid-column: span 4;" onclick="calculate()">=</button>
+</div>
+
+        </div>
+    </main>
+
+   <script>
+    let currentdisplay = "";
+    const display = document.querySelector('#display');
+
+    function appendToDisplay(value) {
+        currentdisplay += value;
+        display.value = currentdisplay;
+    }
+
+    function clearDisplay() {
+        currentdisplay = "";
+        display.value = "";
+    }
+
+    function calculate() {
+        try {
+            currentdisplay = eval(currentdisplay).toString();
+            display.value = currentdisplay;
+        } catch {
+            display.value = "Error";
+            currentdisplay = "";
+        }
+    }
+
+    // Keyboard support
+    document.addEventListener("keydown", (event) => {
+        const key = event.key;
+
+        if (/[\d+\-*/.]/.test(key)) {
+            appendToDisplay(key);
+        } else if (key === "Enter") {
+            event.preventDefault();  // <-- Prevent default Enter behavior
+            calculate();
+        } else if (key === "Backspace") {
+            currentdisplay = currentdisplay.slice(0, -1);
+            display.value = currentdisplay;
+        } else if (key === "Escape") {
+            clearDisplay();
+        }
+    });
+</script>
+
+</body>
+
+</html>
